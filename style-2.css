@@ -1,0 +1,118 @@
+body {
+    background-color: #FDFDFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0; 
+    margin: 0;
+    font-family: 'blinker';
+}
+
+.container {
+    background-color: #172A3A;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 50px;
+    margin-top: 30px;
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+    min-width: 490px;
+    min-height: 490px;
+    border-radius: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.web-title {
+    color: white;
+    font-size: 30px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    position: relative; 
+    text-align: center; 
+}
+
+.web-title img {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%); 
+    margin-right: 10px;
+}
+
+.location {
+    color: white;
+    font-size: 20px;
+}
+
+.weather-logo {
+    padding: 20px;
+}
+
+.weather-info {
+    color: white;
+    font-size: 20px;
+    margin-bottom: 10px; 
+}
+.weather-info h4 {
+    font-weight: 400;
+}
+.temperature {
+    margin-bottom: 10px; 
+}
+.temperature h1 {
+    color: white;
+    font-size: 100px;
+    font-weight: 400;
+}
+
+.container-footer {
+    background-color: #508991;
+    width: 100%;
+    padding: 20px 0; 
+    position: absolute; 
+    bottom: 0; 
+    left: 0;
+    display: flex;
+    justify-content: space-around; 
+    color: white;
+    border: 1px solid #ffffff;
+}
+.feel-temperature, .humidity {
+    display: flex;
+    align-items: center; 
+}
+
+.feel-temperature img, .humidity img {
+    margin-right: 10px; 
+}
+
+.temp-value, .humidity-value {
+    font-size: 24px;
+}
+
+.temp-label, .humidity-label {
+    font-size: 16px; 
+    display: flex;
+    flex-direction: column; 
+}
+
+.separator {
+    background-color: #ffffff; 
+    width: 1px; 
+    height: 80%; 
+    margin: 0 20px; 
+}
+
+.footer {
+    position: absolute;
+    bottom: 0; 
+    left: 0;
+    width: 100%; 
+}
+
+.footer img {
+    width: 80%; 
+    max-width: 400px; 
+    display: block; 
+}

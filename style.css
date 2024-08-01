@@ -17,6 +17,7 @@ body {
     max-width: 500px;
     width: 100%;
     border-radius: 10px;
+    position: relative;
 }
   
 .web-title {
@@ -86,22 +87,26 @@ body {
   
 .footer {
     position: absolute;
-    bottom: 20px;
-    left: 20px;
+    bottom: 0; 
+    left: 0;
+    width: 100%; 
 }
-.footer img{
-    max-width: 500px;
+
+.footer img {
+    width: 80%; 
+    max-width: 400px; 
+    display: block; 
 }
-.loading {
+
+.loading-message {
     display: none;
     position: absolute;
-    top: 20px;
+    top: 90px; 
     left: 50%;
     transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 20px;
-    border-radius: 10px;
-    font-size: 18px;
-    font-weight: bold;
+    width: 63%;
+    background-color:#D3DEDE;
+    color: #004346;
+    padding: 10px;
+    font-size: 14px;
 }
