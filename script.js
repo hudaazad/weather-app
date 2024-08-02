@@ -19,13 +19,24 @@ async function fetchWeather() {
                 window.location.href = `weather.html?${queryString}`;
             } else {
                 console.error('Error:', data.message);
+                alert('Error: ' + data.message);
             }
         } catch (error) {
             console.error('Error:', error);
+            alert('Error fetching weather data.');
         } finally {
             loadingMessage.style.display = 'none';
         }
     } else {
         alert('Enter a city name!');
     }
+}
+
+function populateWeatherInfo() {
+    let params = new URLSearchParams(window.location.search);
+    document.getElementById('locationName').innerText = params.get('city');
+    document.getElementById('temperature').innerText = params.get('temperature') + '°C';
+    document.getElementById('weatherDescription').innerText = params.get('description');
+    document.getElementById('feelsLike').innerText = params.get('feels_like') + '°C';
+    document.getElementById('humidity').innerText = params.get('humidity') + '%';
 }
