@@ -1,38 +1,38 @@
 async function fetchWeather() {
     let city = document.getElementById('cityInput').value;
+    let errorMessage = document.getElementById('errorMessage');
+    let loadingMessage = document.getElementById('loadingMessage');
     if (city) {
-        let loadingMessage = document.getElementById('loadingMessage');
         loadingMessage.style.display = 'block';
+        errorMessage.style.display = 'none';
         
         try {
             let response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=45c1808605aaea18532f249cb6e909ab&units=metric`);
             let data = await response.json();
             
-            if (data.cod === 200) {
-                let queryString = new URLSearchParams({
-                    city: data.name,
-                    temperature: data.main.temp,
-                    description: data.weather[0].description,
-                    feels_like: data.main.feels_like,
-                    humidity: data.main.humidity
-                }).toString();
-                window.location.href = `weather.html?${queryString}`;
-            } else {
+        if (data.cod === 200) {
+            let queryString = new URLSearchParams({
+            city: data.name,
+            temperature: data.main.temp,
+            description: data.weather[0].description,
+            feels_like: data.main.feels_like,
+            humidity: data.main.humidity
+            }).toString();
+            window.location.href = `weather.html?${queryString}`;
+            }else {
                 console.error('Error:', data.message);
-                alert('Error: ' + data.message);
             }
-        } catch (error) {
+        } catch(error) {
             console.error('Error:', error);
-            alert('Error fetching weather data.');
-        } finally {
+            errorMessage.style.display = 'block';
+        } finally{
             loadingMessage.style.display = 'none';
         }
-    } else {
-        alert('Enter a city name!');
+    } else{
+        alert('invalid input');
     }
 }
-
-function populateWeatherInfo() {
+function weatherInfo() {
     let params = new URLSearchParams(window.location.search);
     document.getElementById('locationName').innerText = params.get('city');
     document.getElementById('temperature').innerText = params.get('temperature') + '°C';
@@ -40,3 +40,8 @@ function populateWeatherInfo() {
     document.getElementById('feelsLike').innerText = params.get('feels_like') + '°C';
     document.getElementById('humidity').innerText = params.get('humidity') + '%';
 }
+document.getElementById('cityInput').addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+        fetchWeather();
+    }
+});

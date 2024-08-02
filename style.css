@@ -110,3 +110,15 @@ body {
     padding: 10px;
     font-size: 14px;
 }
+.error-message {
+    display: none;
+    position: absolute;
+    top: 90px; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 63%;
+    background-color:#D3DEDE;
+    color: #004346;
+    padding: 10px;
+    font-size: 14px;
+}
