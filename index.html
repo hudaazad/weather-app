@@ -16,6 +16,7 @@
     <div class="input">
       <div class="loading-message" id="loadingMessage">Loading...</div>
       <div class="error-message" id="errorMessage">Error fetching data</div>
+      <div class="incorrect-city-message" id="incorrectMessage">Incorrect Input</div>
       <div class="input-group">
         <input type="text" id="cityInput" placeholder="Enter city name">
         <button type="button" id="myButton" onclick="fetchWeather()"><img src="Vector.png"></button>
@@ -25,7 +26,7 @@
         <span class="or">or</span>
         <div class="line"></div>
       </div>      
-      <button class="location-button">Use device location</button>
+      <button class="location-button" id="locationButton">Use device location</button>
     </div>
   </div> 
   <div class="footer">

@@ -32,12 +32,15 @@ body {
     text-align: center; 
 }
 
-.web-title img {
+.web-title button {
     position: absolute;
     left: 0;
     top: 50%;
     transform: translateY(-50%); 
     margin-right: 10px;
+    background-color: #172A3A;
+    border: none;
+    cursor: pointer;
 }
 
 .location {
